@@ -36,11 +36,11 @@ var getPageContent = function(config, fail, success) {
 	}
 };
 
-module.exports = function(hostNames, indexFileText, expireSeconds) {
+module.exports = function(port, hostNames, indexFileText, expireSeconds) {
 	return function(req, res, next) {
 		var config = {
 			hostNames: hostNames,
-			hostKey: req.headers.host,
+			hostKey: req.headers.host.replace(".localhost:" + port, ""),
 			indexFileText: indexFileText,
 			expireSeconds: expireSeconds
 		};

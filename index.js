@@ -9,7 +9,7 @@ var port = process.env.PORT || 3000;
 var cacheExpireSeconds = 10800; // 3 hours
 
 function setUpRoutes(indexFileText, hostNames) {
-	var basePageController = controllers.basePage(hostNames, indexFileText, cacheExpireSeconds);
+	var basePageController = controllers.basePage(port, hostNames, indexFileText, cacheExpireSeconds);
 	
 	app.use("/", function(req, res, next) {
 		if (req.path === "/") {
