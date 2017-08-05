@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<title>{{&pageTitle}} - {{&tagLine}}</title>
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="description" content="{{&metaDescription}}">
+		<meta name="twitter:card" value="{{&metaDescription}}">
+		<meta property="og:title" content="{{&pageTitle}}">
+		<meta property="og:type" content="website">
+		<meta property="og:url" content="{{&canoncialhostName}}">
+		<meta property="og:description" content="{{&metaDescription}}">
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+		<link rel="stylesheet" href="styles.css">
+	</head>
+	<body>
+		<div class="page-header">
+			<h1>{{&pageTitle}}</h1>
+			<div class="section-links">
+				{{#youtube}}
+					<a href="#intro">Intro</a>
+				{{/youtube}}
+				{{#wiki}}
+					<a href="#summary">Summary</a>
+				{{/wiki}}
+				{{#news}}
+					<a href="#news">News</a>
+				{{/news}}
+			</div>
+		</div>
+		<div class="content">
+			{{#youtube}}
+				<div class="section" id="intro">
+					<h2 class="section-title">Intro</h2>
+					<div class="section-content">
+						<p class="center">
+							<iframe
+								src="https://www.youtube.com/embed/{{&youtube.video}}"
+								frameborder="0"
+								allowfullscreen
+							></iframe>
+						</p>
+					</div>
+				</div>
+			{{/youtube}}
+			{{#wiki}}
+				<div class="section" id="summary">
+					<h2 class="section-title">Summary</h2>
+					<div class="section-content">
+						{{&wiki.articleContent}}
+						<p class="wiki-cite">
+							The above uses material from the Wikipedia article
+							<a href="{{&wiki.articleUrl}}" target="_blank">"{{&wiki.articleTitle}}"</a>,
+							which is released under the
+							<a
+								href="https://creativecommons.org/licenses/by-sa/3.0/"
+								target="_blank"
+							>Creative Commons Attribution-Share-Alike License 3.0</a>.
+						</p>
+					</div>
+				</div>
+			{{/wiki}}
+			{{#news}}
+				<div class="section" id="news">
+					<h2 class="section-title">News</h2>
+					<div class="section-content">
+						{{#news.entries}}
+							<a href="{{&link}}" target="_blank">
+								<h3>
+									{{&title}}
+								</h3>
+							</a>
+							<p>
+								{{&content}}
+							</p>
+						{{/news.entries}}
+					</div>
+				</div>
+			{{/news}}
+		</div>
+		<div class="footer">
+			<div class="footer-item">
+				<a
+					href="https://twitter.com/share"
+					class="twitter-share-button"
+					data-text="{{&tagLine}}"
+					data-url="{{&canoncialhostName}}"
+					data-show-count="false"
+				>
+					Tweet
+				</a>
+			</div>
+			<div class="footer-item">
+				<div
+					class="fb-share-button"
+					data-href="{{&canoncialhostName}}"
+					data-layout="button_count"
+					data-size="small"
+					data-mobile-iframe="false"
+				>
+					<a
+						class="fb-xfbml-parse-ignore"
+						target="_blank"
+						href="https://www.facebook.com/sharer/sharer.php?u={{&canoncialhostNameEncoded}}&amp;src=sdkpreparse"
+					>
+						Share
+					</a>
+				</div>
+			</div>
+			<div class="footer-item">
+				<strong>&copy; 2017 {{&hostName}}</strong>
+			</div>
+		</div>
+		<div id="fb-root"></div>
+		<script type="text/javascript">
+			window.twttr = (function(d, s, id) {
+				var js, fjs = d.getElementsByTagName(s)[0],
+				t = window.twttr || {};
+				if (d.getElementById(id)) return t;
+				js = d.createElement(s);
+				js.id = id;
+				js.src = "https://platform.twitter.com/widgets.js";
+				fjs.parentNode.insertBefore(js, fjs);
+
+				t._e = [];
+				t.ready = function(f) {
+					t._e.push(f);
+				};
+
+				return t;
+			}(document, "script", "twitter-wjs"));
+		</script>
+		<script type="text/javascript">
+			(function(d, s, id) {
+				var js, fjs = d.getElementsByTagName(s)[0];
+				if (d.getElementById(id)) return;
+				js = d.createElement(s); js.id = id;
+				js.src = "https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.9";
+				fjs.parentNode.insertBefore(js, fjs);
+			}(document, "script", "facebook-jssdk"));
+		</script>
+	</body>
+</html>

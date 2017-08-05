@@ -1,0 +1,23 @@
+{
+  "name": "domainparker",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^4.0.0",
+    "express": "^4.15.3",
+    "jquery": "^3.2.1",
+    "jsdom": "^11.1.0",
+    "mustache": "^2.3.0",
+    "node-cache": "^4.1.1",
+    "node-windows": "^0.1.14",
+    "qs": "^6.5.0",
+    "request": "^2.81.0",
+    "rss-parser": "^2.10.1"
+  }
+}

@@ -1,0 +1,90 @@
+* {
+	margin: 0px;
+	padding: 0px;
+	font-family: "Montserrat", sans-serif;
+}
+
+body {
+	background: #D3D3D3;
+}
+
+.center {
+	text-align: center;
+}
+
+.page-header {
+	height: 95px;
+	width: 100%;
+	background: #000080;
+	color: #FFFFFF;
+	position: fixed;
+	top: 0px;
+	z-index: 100;
+}
+
+.content {
+	padding-top: 110px;
+	padding-left: 15px;
+	padding-right: 15px;
+	min-height: 100vh;
+	max-width: 550px;
+	margin: 0 auto;
+	background: #FFFFFF;
+}
+
+.page-header h1 {
+	padding-top: 10px;
+	padding-bottom: 5px;
+	text-align: center;
+}
+
+.section-links {
+	text-align: center;
+}
+
+.section-links a {
+	margin-left: 3px;
+	margin-right: 3px;
+	color: #FFFFFF;
+}
+
+.section-links a:visited {
+	color: #FFFFFF;
+}
+
+.section-title {
+	padding-bottom: 15px;
+}
+
+.section-content p, .section-content h3 {
+	padding-bottom: 15px;
+}
+
+.section-content iframe {
+	width: 285px;
+	height: 160px;
+}
+
+@media only screen and (min-width: 550px) {
+	.section-content iframe {
+		width: 500px;
+		height: 281px;
+	}
+}
+
+.wiki-cite {
+	font-size: small;
+	font-style: italic;
+}
+
+.footer {
+	font-size: small;
+	text-align: right;
+	position: fixed;
+	right: 10px;
+	bottom: 10px;
+}
+
+.footer-item {
+	padding-top: 5px;
+}

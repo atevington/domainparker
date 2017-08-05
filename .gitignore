@@ -1,0 +1,4 @@
+hostNames.json
+.env
+/node_modules/*
+/daemon/*
