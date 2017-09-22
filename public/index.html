@@ -139,5 +139,14 @@
 				fjs.parentNode.insertBefore(js, fjs);
 			}(document, "script", "facebook-jssdk"));
 		</script>
+		{{#googleAnalyticsId}}
+			<script type="text/javascript" src="https://www.googletagmanager.com/gtag/js?id={{googleAnalyticsId}}"></script>
+			<script type="text/javascript">
+				window.dataLayer = window.dataLayer || [];
+				function gtag(){dataLayer.push(arguments)};
+				gtag("js", new Date());
+				gtag("config", "{{googleAnalyticsId}}");
+			</script>
+		{{/googleAnalyticsId}}
 	</body>
 </html>
